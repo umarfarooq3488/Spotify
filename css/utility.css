@@ -1,0 +1,23 @@
+.invert {
+    filter: invert(1);
+}
+/* Apply styles to the entire scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track styles */
+  ::-webkit-scrollbar-track {
+    background-color: #333;
+  }
+  
+  /* Handle styles */
+  ::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 6px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+  }
