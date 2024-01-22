@@ -23,7 +23,7 @@ async function getSongs(folder) {
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
-    let as = div.getElementsByTagName("a")
+    let as = div.getElementsByTagName("a");
     songs = []
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
@@ -31,7 +31,6 @@ async function getSongs(folder) {
             songs.push(element.href.split(`/${folder}/`)[1])
         }
     }
-
 
 
     // Show all the songs in the playlist
@@ -84,7 +83,7 @@ async function displayAlbums() {
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
         if (e.href.includes("/songs") && !e.href.includes(".htaccess")) {
-            let folder = e.href.split("/").slice(-2)[0]
+            let folder = e.href.split("/").slice(-2)[0];
             // Get the metadata of the folder
             let a = await fetch(`/songs/${folder}/info.json`)
             let response = await a.json();
@@ -117,7 +116,7 @@ async function displayAlbums() {
 
 async function main() {
     // Get the list of all the songs
-    await getSongs("Songs/ncs")
+    await getSongs("songs/ncs")
     playMusic(songs[0], true)
 
     // Display all the albums on the page
@@ -218,7 +217,6 @@ async function main() {
     next.addEventListener("click", () => {
         currentSong.pause()
         console.log("Next clicked")
-        console.log(currentSong.src);
 
         let lists = document.querySelector(".songsList").getElementsByTagName("li");
 
